@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: Password Validation API
+  version: 1.0.0
+paths:
+  /validate-password:
+    post:
+      summary: Validates the security of a password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: "vYQIYxO&p$yfI^r"
+              required:
+                - password
+      responses:
+        '204':
+          description: The password is valid
+        '400':
+          description: The password is invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                      example: "The password does not meet the security requirements"

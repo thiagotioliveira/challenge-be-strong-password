@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: strong-password
+app:
+  atLeastNCharacters:
+    n: 8
+  atLeastNLettersUpperCase:
+    n: 1
+  atLeastNLettersLowerCase:
+    n: 1
+  atLeastNDigits:
+    n: 1
+  atLeastNSpecialCharacters:
+    n: 1
+    specialChars: "!@#$%"
